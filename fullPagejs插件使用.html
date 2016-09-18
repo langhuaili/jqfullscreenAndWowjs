@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/jquery.fullpage.css"/>
+    <style>
+        #wrap div.page1{
+            background: url('./img/4.jpg');
+            height: 700px;
+            width: 100%;
+        }
+        #wrap div.page2{
+            background: url('./img/2.jpg');
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="page1 section  active">
+        这是第一页
+        <div class="a">
+            这是一个忧郁的故事
+        </div>
+        这是一个忧郁的故事
+    </div>
+    <div class="page2 section ">
+        这是第二页
+        这是一个忧郁的故事
+    </div>
+    <div class="page3 section ">
+        这是第三页
+        这是一个忧郁的故事
+    </div>
+    <div class="page4 section  ">
+        这是第四页
+        这是一个忧郁的故事
+    </div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.fullPage.js"></script>
+<script>
+    $(function () {
+    $('#wrap').fullpage({
+        'verticalCentered': true,
+        'css3': true,
+        'sectionsColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
+        'navigation': true,
+        'navigationPosition': 'right',
+        'slidesNavPosition':'bottom',
+        'scrollingSpeed':'500',
+        'afterLoad':function (a,inex) {
+            console.log(inex);
+            console.log($(this).eq(0));
+        },
+        'onLeave':function () {
+            console.log('hha');
+        },
+        'loopTop':true,
+        'loopBottom':true,
+    });
+    })
+</script>
+</body>
+</html>
